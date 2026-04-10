@@ -1,11 +1,13 @@
 import Image from "next/image";
 import logoImg from "../assets/logo.png";
 import { format } from "date-fns";
+import BreakingNews from "./BreakingNews";
+import Navbar from "./Navbar";
 const today = format(new Date(), "EEEE, MMMM dd, yyyy");
 
 export default function Header() {
   return (
-    <div className="text-center py-8 border-b">
+    <div className="text-center py-8">
       <Image
       loading="eager"
         src={logoImg}
@@ -17,6 +19,11 @@ export default function Header() {
       <p className="mt-2">Journalism Without Fear or Favour</p>
 
       <p className="text-sm text-muted-foreground mt-4">{today}</p>
+      
+      <>
+      <BreakingNews />
+      <Navbar />
+      </>
     </div>
   );
 }
