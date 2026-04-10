@@ -1,4 +1,5 @@
 import LeftSidebar from "@/app/components/LeftSidebar";
+import NewsCard from "@/app/components/NewsCard";
 import RightSidebar from "@/app/components/RightSideBar";
 import { getCategories, getNewsByCategory } from "@/app/lib/data";
 
@@ -33,7 +34,7 @@ export default async function CategoryPage({ params }) {
             Dragon News Home 
           </p>
           {news?.length > 0 ? (
-            news?.map((item) => <li key={item.id}>{item.title}</li>)
+            news?.map((item) => <NewsCard key={item.id} news={item} />)
           ) : (
             <p className="text-4xl text-cyan-500 font-bold ">No news found for this category.</p>
           )}
